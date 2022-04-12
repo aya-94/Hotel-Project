@@ -1,6 +1,6 @@
 # Hotel-Project
 
-A project I've been working on SheCodes, been adding the JS only recently.
+A project I've been working on in SheCodes.
 
 link to watch => https://aya-94.github.io/Hotel-Project/
 
