@@ -1,0 +1,778 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } 
+
+body, html {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    width: 100%;
+    line-height: 1.5;
+}
+
+/* small screen menu */
+
+.menu-wrap {
+    display: none;
+}
+
+/* large screen menu */
+
+.li_lap {
+    list-style-type: none;
+    padding: 3vh 1vw;
+    font-size: 2.2vh;  
+    font-family: var(--bs-font-sans-serif);
+  }
+
+  .li_lap:first-child {
+      margin-left: 30px;
+  }
+
+
+  .nav-color {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+
+  @keyframes nav-text {
+    0% {
+        color: rgb(255, 255, 255);
+      }
+      100% {
+        color: rgb(0, 0, 0);
+      }
+}
+
+@keyframes no-nav-text {
+    0% {
+        color: rgb(0, 0, 0);
+      }
+      100% {
+        color: rgb(255, 255, 255);
+      }
+}
+
+.nav-color:hover{
+    color: #19aa31;
+    transition: all 200ms ease-in-out;
+  }
+
+
+.nav_lap {
+  width: 100vw;
+  position: fixed;
+  padding: 0 1rem;
+  z-index: 9999;
+  display: flex; 
+  justify-content: space-between;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+} 
+
+@keyframes nav-back {
+    0% {
+        background-color: none;
+      }
+      100% {
+        background-color: rgba(255, 255, 255, 0.658);
+      }
+}
+
+@keyframes no-nav-back {
+    0% {
+        background-color: rgba(255, 255, 255, 0.658);
+      }
+      100% {
+        background-color: none;
+      }
+}
+
+
+
+.ul_lap {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+  /*home*/
+
+
+  .home {
+    width: 100%;
+    height: 1080px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(b-loch_hills.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    color:white;
+    overflow: auto;
+}
+
+ .home h1 {
+      text-align: center;
+      margin-top: 40vh;
+      font-size: 120px;
+      letter-spacing: 2px;
+  }
+
+
+  .Kinlochleven {
+    text-align: center;
+    display: block;
+    margin-top: -1vh;
+    font-size: 35px;
+    letter-spacing: 5px;
+  }
+
+
+ /*book*/
+
+ .book {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ 
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 70px;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input,
+.form-inline select {
+  vertical-align: middle;
+  margin: 5px 20px;
+  padding: 10px 40px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  width: 250px;
+}
+
+.form-inline input:focus {
+width: 250px;
+}
+
+
+.form-inline button {
+  padding: 10px 70px;
+  background-color: #3a5a40;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.form-inline button:hover {
+  background-color: #0e6d1e;
+  transition: all 0.1s ease-in;
+}
+
+input::placeholder {
+  color: #000000;
+}
+
+
+/* about */
+
+ .about_info_small {
+    display: none;
+ } 
+
+ .about {
+  text-align: center;
+ position: relative;
+ overflow: hidden;
+  background-image: url(b-tigh_na_cheo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: left 0 top 7em;
+  color: white;
+  overflow: auto;
+ height: 850px;
+}
+
+ .about_info_click {
+  display: block;
+  text-align: center;
+  background-color: #3a5a40;
+  margin: 0;
+  height: 20%;
+  padding: 25px;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+
+@keyframes popInfo {
+  0% {height: 20%; margin: 0; padding: 25px;}
+  100% {height: 75%; margin: 0; padding: 0 8% 8% 8%;}
+}
+
+@keyframes closeInfo {
+  0% {height: 75%; margin: 0; padding: 0 8% 8% 8%;}
+  100% {height: 20%; margin: 0; padding: 25px;}
+}
+
+.about_info_small {
+  text-align: justify;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 0 20%;
+  opacity: 0;
+  font-size: 20px;
+  margin-top: 60px;
+  animation-name: textIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+} 
+
+@keyframes textIn {
+  0% {opacity: 0;}
+  100% {opacity: 80%;}
+}
+
+
+.click-text {
+  margin-top: 25px;
+    margin-bottom: 5px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+
+#arrow-toggle {
+  color: white;
+  width: 40px;
+  filter: invert(1);
+  cursor: pointer;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes toggle-rotate {
+  0% {
+    transform: rotate(0deg); margin-top: 0;
+  }
+  100% {
+    transform: rotate(180deg);margin-top: 40px;
+  }
+}
+
+@keyframes untoggle-rotate {
+  0% {
+    transform: rotate(180deg); margin-top: 40px;
+  }
+  100% {
+    transform: rotate(0deg); margin-top: 0;
+  }
+}
+
+  /* rooms */
+
+  .rooms {
+    padding: 30px 80px;
+    margin-top: 50px;
+  }
+
+  .rooms img {
+    border-radius: 5px;
+  }
+
+  .rooms_info span {
+    display: block;
+}
+
+  .our_rooms {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+      
+  }
+
+
+  .twin_room {
+    margin: 100px 0;
+  }
+
+  .double_img {
+    object-fit: cover;
+    width: 49%;
+    height: 400px;
+  }
+
+  .twin_img {
+    width: 49.01%;
+    object-fit: cover;
+    height: 400px;
+  }
+
+  .single_img {
+    object-fit: cover;
+    width: 49%;
+    height: 400px;
+  }
+
+
+  .btn_rooms {
+      display: block;
+      margin: auto;
+      border: none;
+      background-color: #3a5a40;
+      padding: 13px 25px;
+      margin-top: 15px;
+      color:#ffffff;
+      letter-spacing: 1px;
+      display: table;
+      border-radius: 5px;
+      transition: all 0.5s ease-in;
+  }
+
+  .green_stick {
+    background-color: #3a5a40;
+    width: 50px;
+    height: 1px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+  .btn_rooms:hover {
+    background-color: #0e6d1e;
+    cursor: pointer; 
+  }
+
+.double_info h2 {
+    margin-top: 10%;
+}
+
+.twin_info h2 {
+    margin-top: 15%;
+}
+
+
+.double_info {
+    width: 50%;
+    height: 400px;
+    float: right;
+    padding: 25px;
+    text-align: center;
+}
+
+.twin_info {
+    width: 50%;
+    height: 400px;
+    margin-top: 0;
+    margin-left: 0;
+    float: left;
+    text-align: center;
+}
+
+.single_info {
+    width: 49%;
+    height: 400px;
+    position: absolute;
+    text-align: center;
+    margin-left: 45%;
+}
+
+.single_info h2 {
+    margin-top: 15%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+
+/*attractions*/
+
+.attractions_info_small {
+    display: none;
+}
+.attractions {
+    text-align: center;
+    margin-top: 180px;
+    text-align: center;
+    position: relative;
+    background-image: url(b-kinlochleven_hike.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    overflow: auto;
+    height: 850px;
+    transform: scaleX(-1);
+}
+
+.attractions_container {
+    position: relative;
+}
+
+.attractions_info_click {
+  transform: scaleX(-1);
+  display: block;
+  text-align: center;
+  background-color: #3a5a40;
+  margin: 0;
+  height: 20%;
+  padding: 25px;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes popInfo2 {
+  0% {height: 20%; margin: 0; padding: 25px;}
+  100% {height: 75%; margin: 0; padding: 0 8% 8% 8%;}
+}
+
+@keyframes closeInfo2 {
+  0% {height: 75%; margin: 0; padding: 0 8% 8% 8%;}
+  100% {height: 20%; margin: 0; padding: 25px;}
+}
+
+.attractions_info_small {
+  text-align: justify;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 20px;
+  padding: 0 20%;
+  opacity: 0;
+  animation-name: textIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+} 
+
+#arrow-toggle2 {
+  color: white;
+  width: 40px;
+  filter: invert(1);
+  cursor: pointer;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes toggle-rotate2 {
+  0% {
+    transform: rotate(0deg); margin-top: 0;
+  }
+  100% {
+    transform: rotate(180deg);margin-top: 40px;
+  }
+}
+
+@keyframes untoggle-rotate2 {
+  0% {
+    transform: rotate(180deg); margin-top: 40px;
+  }
+  100% {
+    transform: rotate(0deg); margin-top: 0;
+  }
+}
+
+.click-textA {
+  margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.attractions_info_small p {
+  margin-top: 35px;
+}
+
+/*reviews*/
+
+.reviews {
+    padding-top: 20px;
+}
+
+.reviews h2 {
+    text-align: center;
+    margin-top: 170px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    letter-spacing: 2px;
+
+}
+
+.reviews_container span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reviews_1, .reviews_2, .reviews_3 {
+    order: 3;
+    margin-top: 0px;
+    margin-left: 55px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.reviews_container {
+    display: flex;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.comment, .review_q {
+    color: #3a5a40;
+    font-style: italic;
+    font-family: 'Caveat', cursive;
+}
+
+.comment {
+    font-size: 35px;
+    
+}
+
+.reviews_container span:nth-of-type(3) {
+    color: #bbbbbb;
+}
+
+.reviews_container span:nth-of-type(1) {
+    text-align: left;
+    font-size: 80px;
+}
+
+.reviews p {
+    text-align: center;
+    margin-top: -10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.reviews p:hover { 
+    color: #19aa31;
+}
+
+.reviews_1 br {
+    display: none;
+}
+
+/*contact*/
+
+.contact {
+    background-color: #3a5a40;
+    margin-top: 180px;
+    height: 715px;
+}
+
+.contact h2 {
+    text-align: center;
+    padding-top: 120px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    padding-bottom: 45px;
+    font-weight: bold;
+}
+
+.contact_form {
+    width: 400px;
+    margin: auto;
+}
+
+
+.form_name, .form_email {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.contact_form label {
+    display: block; 
+    font-weight: bold;
+}
+
+.form_txt {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    height: 150px;
+    border: 2px solid white;
+    background-color: #3a5a40;
+    color: white;
+}
+
+.form_txt:hover {
+    box-shadow: 0.5px 0.5px 4px #000000b9;
+}
+
+.contact_form input {
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 300px;
+    height: 50px;
+    margin-top: 15px;
+    border: 2px solid white;
+    background-color: #3a5a40;
+    outline: none;
+    color: white;
+}
+
+.contact_form input:hover {
+    box-shadow: 0.5px 0.5px 4px #000000b9;
+
+}
+
+.contact textarea {
+    padding: 12px 20px;
+}
+
+.contact ::placeholder {
+    color: white;
+    padding: 10px 2px;
+    margin: 0 30% 0 4%;
+}
+
+.contact input[type=text],
+.contact input[type=email] {
+    padding: 12px 20px;
+}
+
+.form_name input {
+    margin-top: 5px;
+}
+
+.btn_contact {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    border: 2px solid white; 
+    background-color: white;
+    width: 7rem;
+    margin-top: 3rem;
+    padding: 10px 15px;
+    color: #3a5a40;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.btn_contact:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 4px #000000b9;
+
+}
+
+.contact_form img {
+    width: 150px;
+    position: absolute;
+    margin: 150px 530px;
+    transform: scaleX(-1);
+}
+
+.form_btn {
+  text-align: center;
+}
+
+
+/*footer*/
+
+footer {
+    background-color: #e4e4e4;
+    margin-bottom: 0;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.footer1:nth-of-type(1) {
+    padding-top: 100px;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.footer_kin {
+    font-size: 20px;
+    letter-spacing: 1px;  
+}
+
+.green_line {
+    background-color: #19aa31;
+    width: 50px;
+    height: 1px;
+    margin: auto;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+}
+
+.footer1 {
+    float: left;
+    text-align: center;
+    margin-left: 200px;
+}
+
+.right_footer {
+    float: right;
+}
+
+.footer2 span {
+    display: block;
+    padding: 5px;
+    
+}
+
+.footer2 {
+    margin-top: 40px;
+    text-align: center;
+    margin-right: 200px;
+}
+
+.foo_con {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer_social img {
+  width: 40px;
+    padding: 10px;
+    color: #212529;
+}
+
+.footer_social img:hover {
+    color: #19aa31;
+}
+
+
+.copy {
+    text-align: left;
+    margin-bottom: 1px; 
+    position: absolute;
+    
+}
+
+.phone_btn {
+    display: none;
+}
+
