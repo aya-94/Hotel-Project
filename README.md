@@ -4,4 +4,4 @@ A project I've been working on in SheCodes.
 
 link to watch => https://aya-94.github.io/Hotel-Project/
 
-![](The-highlands.png)
+![](./images/The-highlands.png)
