@@ -1,7 +1,8 @@
 "use strict";
 
 // smooth scrolling
-const scrollLinks = document.querySelectorAll('.js-scroll')
+
+const scrollLinks = document.querySelectorAll('.scroll')
 
 scrollLinks.forEach(link => {
   link.addEventListener('click', (event) => { 
@@ -14,66 +15,49 @@ scrollLinks.forEach(link => {
 })
 
 
+// nav background on scroll event
 
-// textarea text on press
+const navText = document.querySelectorAll('.scroll')
+const navBackground = document.querySelector('.large-menu')
+let lastKnownScrollPosition = 0;
+let ticking = false;
 
-document.addEventListener('click', (event) => {
-    const textarea = document.querySelector('.form_txt')
-    let clickedEvent = event.target
+const addBackground = e => {
+  let scrollY = this.scrollY;
 
-    do {
-    if(clickedEvent === textarea){
-        return textarea.innerHTML = ''
-    }
-    clickedEvent = clickedEvent.parentNode;
-    } while (clickedEvent);
+  if (scrollY > 400) {
+      navBackground.style.animationName = "nav-back";
+      navText.forEach(function(e) {e.style.animationName = "nav-text"})
+  } else {
+      navBackground.style.animationName = "no-nav-back";
+      navText.forEach(function(e) {e.style.animationName = "no-nav-text"})
+  }
+}
 
-     textarea.innerHTML = 'Message'
+document.addEventListener('scroll', function(e) {
+    lastKnownScrollPosition = window.scrollY;
+    addBackground(lastKnownScrollPosition);
 })
 
-const inputName = document.getElementById('name')
-const inputEmail = document.getElementById('email')
-
-
-// placeholder text on press
-function formPlaceholder (el, place) {
-    document.addEventListener('click', (event) => {
-  
-        let clickedEvent = event.target
-        do {
-        if(clickedEvent === el){
-            return el.placeholder = ''
-        }
-        clickedEvent = clickedEvent.parentNode;
-        } while (clickedEvent);
-    
-         el.placeholder = place
-    })
-}
-formPlaceholder(inputName, 'Name')
-formPlaceholder(inputEmail, 'Email')
-
-
-
-// pop info
+// info and attraction toggle event
 
 const infoPop = document.querySelector('.about_info_click')
 const attractionsPop = document.querySelector('.attractions_info_click')
 const infoContainer = document.querySelector('.about_info_small')
 const attractionsContainer = document.querySelector('.attractions_info_small')
-const clickText = document.querySelector('.click-text')
-const clickTextA = document.querySelector('.click-textA')
+const clickText1 = document.querySelector('.click-text-1')
+const clickText2 = document.querySelector('.click-text-2')
 
 // open info about
 const openInfo = e => {
-  clickText.style.display = "none"
+  clickText1.style.display = "none"
   infoPop.style.animationName = "popInfo"
   setTimeout(() => {infoContainer.style.display = "block"}, 800)
 }
 
 // open info attractions
 const openAtt = e => {
-  clickTextA.style.display = "none"
+  clickText2.style.display = "none"
   attractionsPop.style.animationName = "popInfo2"
   setTimeout(() => {attractionsContainer.style.display = "block"}, 800)
 }
@@ -81,51 +65,46 @@ const openAtt = e => {
 // close info about
 const closeInfo = e => {
   infoContainer.style.display = "none"
-  clickText.style.display = "block"
+  clickText1.style.display = "block"
   infoPop.style.animationName = "closeInfo"
 }
 
 // close info attractions
 const closeAtt = e => {
   attractionsContainer.style.display = "none"
-  clickTextA.style.display = "block"
+  clickText2.style.display = "block"
   attractionsPop.style.animationName = "closeInfo2"
 }
 
 // arrow toggle
-
-const arrowToggle = document.querySelector('#arrow-toggle')
+const arrowToggle1 = document.querySelector('#arrow-toggle')
 const arrowToggle2 = document.querySelector('#arrow-toggle2')
 
-//arrow toggle about
-arrowToggle.addEventListener('click', e => {
-  if (arrowToggle.className == "closed") {
-    arrowToggle.style.animationName = "toggle-rotate"
+// arrow toggle about
+arrowToggle1.addEventListener('click', e => {
+  if (arrowToggle1.className == "closed") {
+    arrowToggle1.style.animationName = "toggle-rotate"
     openInfo()
-    arrowToggle.classList.remove("closed")
+    arrowToggle1.classList.remove("closed")
   } else {
-    arrowToggle.style.animationName = "untoggle-rotate"
+    arrowToggle1.style.animationName = "untoggle-rotate"
     closeInfo()
-    arrowToggle.classList.add("closed")
+    arrowToggle1.classList.add("closed")
   }
-  })
+})
 
-  //arrow toggle attractions
-  arrowToggle2.addEventListener('click', e => {
-
-    if (arrowToggle2.className == "closed") {
-      arrowToggle2.style.animationName = "toggle-rotate2"
-      openAtt()
-      arrowToggle2.classList.remove("closed")
-    } else {
-      arrowToggle2.style.animationName = "untoggle-rotate2"
-      closeAtt()
-      arrowToggle2.classList.add("closed")
-    }
-    })
-
-
-
+// arrow toggle attractions
+arrowToggle2.addEventListener('click', e => {
+  if (arrowToggle2.className == "closed") {
+    arrowToggle2.style.animationName = "toggle-rotate2"
+    openAtt()
+    arrowToggle2.classList.remove("closed")
+  } else {
+    arrowToggle2.style.animationName = "untoggle-rotate2"
+    closeAtt()
+    arrowToggle2.classList.add("closed")
+  }
+})
 
 clickTextA.addEventListener('click', openAtt)
 
@@ -138,33 +117,39 @@ document.addEventListener('keyup', event => {
 })
 
 
+// placeholder text on press
 
+const inputName = document.getElementById('name')
+const inputEmail = document.getElementById('email')
 
-// nav scroll event
-const navText = document.querySelectorAll('.nav-color')
-const navBackground = document.querySelector('.nav_lap')
-
-
-
-let lastKnownScrollPosition = 0;
-let ticking = false;
-
-
-const doSomething = e => {
-
-  let scrollY = this.scrollY;
-  if(scrollY > 400) {
-      navBackground.style.animationName = "nav-back";
-  navText.forEach(function(e) {e.style.animationName = "nav-text"})
-  } else {
-      navBackground.style.animationName = "no-nav-back";
-  navText.forEach(function(e) {e.style.animationName = "no-nav-text"})
-  }
+function formPlaceholder (el, place) {
+    document.addEventListener('click', (event) => {
+        let clickedEvent = event.target
+        do {
+        if (clickedEvent === el){
+            return el.placeholder = ''
+        }
+        clickedEvent = clickedEvent.parentNode;
+        } while (clickedEvent);
+            el.placeholder = place
+    })
 }
 
+formPlaceholder(inputName, 'Name')
+formPlaceholder(inputEmail, 'Email')
 
-document.addEventListener('scroll', function(e) {
-  lastKnownScrollPosition = window.scrollY;
-      doSomething(lastKnownScrollPosition);
 
+// textarea text on press
+
+document.addEventListener('click', (event) => {
+  const textarea = document.querySelector('textarea')
+  let clickedEvent = event.target
+
+  do {
+    if(clickedEvent === textarea){
+        return textarea.innerHTML = ''
+    }
+      clickedEvent = clickedEvent.parentNode;
+    } while (clickedEvent);
+        textarea.innerHTML = 'Message'
 })
