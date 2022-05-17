@@ -29,7 +29,7 @@
       margin-left: 30px;
   }
   
-  .scroll {
+  .link-menu {
       text-decoration: none;
       color: rgb(255, 255, 255);
       animation-duration: 0.1s;
@@ -55,7 +55,7 @@
       }
   }
   
-  .scroll:hover {
+  .link-menu:hover {
       color: #19aa31;
       transition: all 200ms ease-in-out;
   }
