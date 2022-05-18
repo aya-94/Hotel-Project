@@ -602,7 +602,7 @@
         background-position: left -28em top 7em;
     }
     .about_info_small {
-        font-size: 17px;
+        font-size: 20px;
         padding: 0 2%;
     }
     /* rooms */
@@ -611,7 +611,7 @@
     }
     /* attractions */
     .attractions_info_small p {
-        font-size: 17px;
+        font-size: 20px;
     }
     /* reviews */
     .reviews_container {
