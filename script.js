@@ -40,6 +40,21 @@ document.addEventListener('scroll', (e) => {
     addBackground(lastKnownScrollPosition);
 })
 
+// input date on focus
+
+const dateFocus = document.querySelectorAll('.date-focus');
+for (let i = 0; i < dateFocus.length; i++) {
+    dateFocus[i].addEventListener('focus', (event) => {
+        event.target.type = 'date';
+    });
+
+    dateFocus[i].addEventListener('blur', (event) => {
+        if (event.target.value == '') {
+            event.target.type = 'text'
+        };
+    });
+}
+
 // info and attraction toggle event
 
 const infoPop = document.querySelector('.about_info_click')
