@@ -1,7 +1,6 @@
 # Hotel-Project
 
-A project I've been working on in SheCodes since I started with HTML & CSS,
-When I leart JS and had some more knowledge I redone it to this final project.
+An assignment I did inspired by a Guest House I volunteered in Scotland using HTML, CSS & JS.
 
 link to watch => https://aya-94.github.io/Hotel-Project/
 
